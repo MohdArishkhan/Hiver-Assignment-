@@ -152,11 +152,13 @@ def main():
 
     df = pd.read_csv(GOLDEN_FILE)
 
+    # FIX: Replaced "expected_intent" and "expected_decision" with "label"
     required_columns = {
         "sample_id",
+        "tweet_id",
         "text",
         "label",
-    }
+    }   
 
     missing = required_columns - set(df.columns)
 
@@ -283,6 +285,7 @@ def main():
     result = result[
         [
             "sample_id",
+            "tweet_id",
             "text",
             "label",
             "expected_decision",

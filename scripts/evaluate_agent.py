@@ -31,7 +31,7 @@ OUTPUT_FILE = ROOT / "data" / "agent_evaluation_results.csv"
 # EVALUATE ONE EXAMPLE
 # =========================================================
 
-def evaluate_example(text: str) -> dict:
+def evaluate_example(text: str, tweet_id: str) -> dict:
     """
     Run only the deterministic portion of the existing agent.
 
@@ -40,7 +40,10 @@ def evaluate_example(text: str) -> dict:
 
     intent = predict_intent(text)
 
-    retrieved_cases = retrieve_cases(text)
+    retrieved_cases = retrieve_cases(
+    text,
+    exclude_tweet_ids=[tweet_id],
+    )
 
     decision, reason = decide_escalation(
         text,
@@ -299,7 +302,10 @@ def main():
 
         try:
 
-            prediction = evaluate_example(text)
+            prediction = evaluate_example(
+                text,
+                str(row["tweet_id"]),
+            )
 
             results.append(
                 {

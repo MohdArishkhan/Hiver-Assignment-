@@ -80,7 +80,7 @@ def predict_intent(text):
 # RETRIEVE HISTORICAL CASES
 # =========================================================
 
-def retrieve_cases(text, top_k=TOP_K):
+def retrieve_cases(text, top_k=TOP_K, exclude_tweet_ids=None):
 
     query_vector = retrieval_vectorizer.transform([text])
 
@@ -88,6 +88,20 @@ def retrieve_cases(text, top_k=TOP_K):
         query_vector,
         kb_vectors
     ).flatten()
+
+    # Prevent evaluation leakage.
+    # Do not allow the exact customer case being evaluated
+    # to be retrieved as its own historical evidence.
+    if exclude_tweet_ids:
+
+        for tweet_id in exclude_tweet_ids:
+
+            matching_rows = kb.index[
+                kb["customer_tweet_id"].astype(str)
+                == str(tweet_id)
+            ]
+
+            similarities[matching_rows] = -1.0
 
     top_indices = similarities.argsort()[-top_k:][::-1]
 
@@ -114,55 +128,178 @@ def decide_escalation(text, intent, retrieved_cases):
 
     text_lower = text.lower()
 
-    # -----------------------------------------
-    # High-risk account security
-    # -----------------------------------------
+    # =====================================================
+    # NORMALIZE COMMON HTML ENCODING
+    # =====================================================
 
-    security_keywords = [
+    text_lower = (
+        text_lower
+        .replace("&amp;", " and ")
+        .replace("&#39;", "'")
+        .replace("&quot;", '"')
+    )
+
+    # =====================================================
+    # 1. SECURITY RISK
+    # =====================================================
+
+    security_signals = [
         "hacked",
         "hack",
-        "stolen",
+        "hacking",
+        "stolen account",
         "account taken",
         "someone accessed",
+        "someone is using my account",
         "unauthorized",
+        "unauthorised",
         "phishing",
         "scam",
-        "password changed"
+        "fraud",
+        "password changed",
+        "password was changed",
+        "locked me out",
+        "locked out of my account",
+        "can't log in",
+        "cannot log in",
+        "couldn't log in",
+        "could not log in",
+        "unable to log in",
+        "unable to reset my password",
+        "can't reset my password",
+        "cannot reset my password",
     ]
 
-    if intent == "ACCOUNT_LOGIN_SECURITY":
-        for keyword in security_keywords:
-            if keyword in text_lower:
-                return (
-                    "ESCALATE",
-                    "Potential account security or unauthorized-access issue."
-                )
+    if any(signal in text_lower for signal in security_signals):
 
-    # -----------------------------------------
-    # Billing / refund issues
-    # -----------------------------------------
+        return (
+            "ESCALATE",
+            "Potential account security or unauthorized-access issue."
+        )
 
-    billing_keywords = [
-        "refund",
+    # =====================================================
+    # 2. BILLING / PAYMENT RISK
+    # =====================================================
+
+    billing_signals = [
+        "charged",
         "charged twice",
-        "charged twice",
+        "duplicate charge",
         "wrong charge",
         "unexpected charge",
-        "dispute",
-        "money taken"
+        "fraudulent charge",
+        "refund",
+        "billing issue",
+        "payment failed",
+        "payment won't go through",
+        "payment won't",
+        "money taken",
+        "money was taken",
+        "bank statement",
+        "charged my card",
+        "charging my account",
     ]
 
-    if intent == "PAYMENT_BILLING":
-        for keyword in billing_keywords:
-            if keyword in text_lower:
-                return (
-                    "ESCALATE",
-                    "Billing or refund issue may require account-specific action."
-                )
+    if any(signal in text_lower for signal in billing_signals):
 
-    # -----------------------------------------
-    # Weak retrieval
-    # -----------------------------------------
+        return (
+            "ESCALATE",
+            "Billing or payment issue may require account-specific action."
+        )
+
+    # =====================================================
+    # 3. ACCOUNT-SPECIFIC PREMIUM STATUS
+    # =====================================================
+
+    premium_state_signals = [
+        "premium does not work",
+        "premium doesn't work",
+        "premium not working",
+        "still says free",
+        "shows free",
+        "changed to free",
+        "account has changed to free",
+        "premium has stopped working",
+        "paid for premium",
+        "purchased premium",
+        "premium status",
+        "subscription status",
+    ]
+
+    if any(
+        signal in text_lower
+        for signal in premium_state_signals
+    ):
+
+        return (
+            "ESCALATE",
+            "Subscription status may require checking the user's account."
+        )
+
+    # =====================================================
+    # 4. ACCOUNT-SPECIFIC PLAYLIST / LIBRARY DATA
+    # =====================================================
+
+    library_signals = [
+        "playlist disappeared",
+        "playlists disappeared",
+        "playlist is gone",
+        "playlists are gone",
+        "deleted my playlist",
+        "deleted my library",
+        "lost my playlist",
+        "lost my playlists",
+        "lost my library",
+        "my library disappeared",
+        "all my saved music",
+        "saved music disappeared",
+        "playlists don't sync",
+        "playlists do not sync",
+        "not syncing between",
+        "restore my playlist",
+        "restore previous week's playlist",
+        "randomly deleting my library",
+        "randomly deleted my library",
+    ]
+
+    if any(
+        signal in text_lower
+        for signal in library_signals
+    ):
+
+        return (
+            "ESCALATE",
+            "Account-specific playlist or library data may require support review."
+        )
+
+    # =====================================================
+    # 5. VAGUE / CONTEXT-FREE MESSAGE
+    # =====================================================
+
+    vague_signals = [
+        "still the same",
+        "no luck",
+        "not sure",
+        "same issue",
+        "no solution yet",
+        "please help",
+    ]
+
+    if len(text_lower.split()) <= 8:
+
+        if any(
+            signal in text_lower
+            for signal in vague_signals
+        ):
+
+            return (
+                "ESCALATE",
+                "Message lacks enough actionable context for safe automated handling."
+            )
+
+    # =====================================================
+    # 6. WEAK HISTORICAL EVIDENCE
+    # =====================================================
 
     best_similarity = 0.0
 
@@ -170,41 +307,20 @@ def decide_escalation(text, intent, retrieved_cases):
         best_similarity = retrieved_cases[0]["similarity"]
 
     if best_similarity < 0.20:
+
         return (
             "ESCALATE",
             "Insufficient similarity to historical Spotify support cases."
         )
 
-    # -----------------------------------------
-    # Vague messages
-    # -----------------------------------------
-
-    vague_phrases = [
-        "still the same",
-        "no luck",
-        "help",
-        "it doesn't work",
-        "not working"
-    ]
-
-    if len(text.split()) <= 5:
-        for phrase in vague_phrases:
-            if phrase in text_lower:
-                return (
-                    "ESCALATE",
-                    "Message is too vague to safely generate a reliable response."
-                )
-
-    # -----------------------------------------
-    # Otherwise auto-handle
-    # -----------------------------------------
+    # =====================================================
+    # 7. OTHERWISE AUTO-HANDLE
+    # =====================================================
 
     return (
         "AUTO_HANDLE",
         "Intent is identifiable and similar historical support cases were found."
     )
-
-
 # =========================================================
 # MAIN AGENT
 # =========================================================
@@ -258,7 +374,7 @@ def run_agent(text):
     print(reason)
 
     # -----------------------------------------
-    # Reply
+    #   
     # -----------------------------------------
 
     if decision == "AUTO_HANDLE":
