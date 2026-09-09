@@ -1,0 +1,76 @@
+sample_id,tweet_id,text,expected_intent,expected_decision
+6,565419,"@SpotifyCares if I purchase the discounted annual premium subscription (12 months for price of 10), does the month I am already on with my monthly premium subscription finish first before it kicks in or does it just start straight away?",PREMIUM_SUBSCRIPTION,AUTO_HANDLE
+10,2251451,@SpotifyCares  CarPlay integration indeed is extremely buggy 😡😡😡,APP_TECHNICAL_ISSUE,AUTO_HANDLE
+12,707054,@SpotifyCares Any idea why your Android app occasionally wipes out every download? Now redownloading about 1600 songs. Not the first time.,DOWNLOAD_OFFLINE,AUTO_HANDLE
+13,1796739,@SpotifyCares why did my account downgrade after two days of premium service,PREMIUM_SUBSCRIPTION,AUTO_HANDLE
+23,1909604,@568872 @SpotifyCares Gummo still mf deleted https://t.co/rrqIDjrzNr,MUSIC_CONTENT_AVAILABILITY,AUTO_HANDLE
+24,2917841,@SpotifyCares App isn’t working. Doesn’t matter if I’m on data or WiFi. Restarted my phone and updated. What’s going on?,APP_TECHNICAL_ISSUE,AUTO_HANDLE
+33,2528938,If only @115888 had every @46723 and @46724 remix I would such a happy girl,MUSIC_CONTENT_AVAILABILITY,AUTO_HANDLE
+36,2873765,"@SpotifyCares I archive my Discover Weekly using the IFTTT applet, but it failed last week now I've lost what had become my new favourite song and can't remember it! Is it possible to restore my previous week's playlist?  Thks!",PLAYLIST_LIBRARY,AUTO_HANDLE
+38,2028538,"You already have this functionality on podcasts. Why not do it for albums, @115888?! Seriously, not that hard to ad a sort. #UX #Design https://t.co/uHMOmnCRgb",FEATURE_REQUEST,AUTO_HANDLE
+40,48118,P.Y.S.T. (Pretty Young Stranger Things)\nThe Moonwalking Dead\nBoJack Horseman in the Mirror\n#MichaelJacksonTVandMovies,GENERAL_OTHER,AUTO_HANDLE
+41,1739400,"Hey, @SpotifyCares, we want to create lists with our podcast episodes! 😝",FEATURE_REQUEST,AUTO_HANDLE
+57,2190769,"@SpotifyCares i changed my Facebook profile picture back in may and although it has updated on your website, it has not on my app, both on laptop and phone",APP_TECHNICAL_ISSUE,AUTO_HANDLE
+67,1121425,"@115888 why can't you do this for metal, metal-core, hardcore, ect???? https://t.co/4HMjznIFNg",FEATURE_REQUEST,AUTO_HANDLE
+73,2929827,"@SpotifyCares Yep. All that I tried. Even uninstalled, restarted. Removed all data by hand. Installed again. The default settings was set to SD card, but all music ended on the internal storage.",DOWNLOAD_OFFLINE,AUTO_HANDLE
+75,2310888,"@115888 Hey! I can't sign in with my username and password with my TouchTunes @90737 new account. My Samsung mobile account needs updating, too! @125607 I CHANGED my name legally this year. Problems tonight as I am out TRYING to have a good time!",ACCOUNT_LOGIN_SECURITY,AUTO_HANDLE
+80,2259585,@115888 Where the hell are my buttons to access library and so on? #UIDisaster On th verge of switching if you don’t stop messing with the UI. https://t.co/NfDF1SH5pK,APP_TECHNICAL_ISSUE,AUTO_HANDLE
+84,2293042,@SpotifyCares been charging my account and i canceled last month 🤨,PAYMENT_BILLING,ESCALATE
+87,818977,@115888 @SpotifyCares please fix your artist.spotify contact page.,APP_TECHNICAL_ISSUE,AUTO_HANDLE
+88,1139896,@117153 I was charged the annual suscription but the premium does not work for me,PAYMENT_BILLING,ESCALATE
+90,538064,"@115888 I'd like to get the premium version but here Is the case I don't have a credit card but I've enough fund in my Google play Store. Please I want find out if I can pay via Google play Store, BTC or iTunes gift card. Please waiting for your response. Thanks Gerd!!!",PAYMENT_BILLING,AUTO_HANDLE
+105,1509485,@SpotifyCares Not sure to be honest. No other issues with Spotify though at all.,GENERAL_OTHER,AUTO_HANDLE
+106,2190728,That moment when you wonder if you should be tweeting to @SpotifyCares or @comcastcares because not a single song has played without interruption... 😩,PLAYBACK_ISSUE,AUTO_HANDLE
+107,1348074,@SpotifyCares when is yelawolf new album available on @116130,MUSIC_CONTENT_AVAILABILITY,AUTO_HANDLE
+109,2653012,Wait so when can we listen to #Reputation on @115888 ?? @118062,MUSIC_CONTENT_AVAILABILITY,AUTO_HANDLE
+110,446911,@SpotifyCares Listening to Spotify thru my web browser cuz I’m at work. It booted me out and won’t let me log back in. 😩,ACCOUNT_LOGIN_SECURITY,AUTO_HANDLE
+111,1711917,@SpotifyCares Apparently there is no contact form anymore. How do i get my issues fixed!,GENERAL_OTHER,AUTO_HANDLE
+114,1998302,@SpotifyCares is there any Siri integration with Spotify?,FEATURE_REQUEST,AUTO_HANDLE
+118,2572197,why The suburbs by @10789 is not available in @115888 :( ?,MUSIC_CONTENT_AVAILABILITY,AUTO_HANDLE
+120,760621,"@SpotifyCares had an email from you saying my email address had been changed, meant I couldn't log in to change password. Advise please",ACCOUNT_LOGIN_SECURITY,ESCALATE
+123,2294399,@SpotifyCares Ok thanks! I voted to please build an app for it! I may have to switch to Apple music otherwise so I can run with playlists,FEATURE_REQUEST,AUTO_HANDLE
+124,2802526,"@SpotifyCares Hello, my account got hacked recently. Could you please send a reply/help too ""__email__"" thank you!",ACCOUNT_LOGIN_SECURITY,ESCALATE
+129,1145862,@SpotifyCares I did. There's a plethora of users having problems with you app in Windows 10 Phone. Check the comments. Thanks you.,APP_TECHNICAL_ISSUE,AUTO_HANDLE
+130,64386,@SpotifyCares hellow I need some help with this i cant connect with the facebook app https://t.co/gzAygdZrEV,ACCOUNT_LOGIN_SECURITY,AUTO_HANDLE
+133,2036355,"@117153 Good evening, folks changed my premium plan for family plan. My wife received an invitation but nothing happens.",FAMILY_STUDENT_PLANS,AUTO_HANDLE
+134,79419,@SpotifyCares I’ve sent you a message and you’re not still responding,GENERAL_OTHER,AUTO_HANDLE
+136,2708590,"@spotifycares Please help. I'm being charged twice a month, but only have one account. How can I locate the second account that's charging to my visa? I've tried suggestions on your help page and am stumped.",PAYMENT_BILLING,ESCALATE
+147,1961287,Hi @SpotifyCares My wife’s account appears to have stopped working. She can’t log in at all. Can you advise how we can check it’s active?,ACCOUNT_LOGIN_SECURITY,AUTO_HANDLE
+151,1156870,@115888 did you know people move. And need to change their address to share family access to premium? Why can't I do that online? KTHXBYE,FAMILY_STUDENT_PLANS,AUTO_HANDLE
+162,2473659,@115888 why is it your system always has problems playing the commercials. I have 100mbs service and it always buffers. Maybe you should go to sound only!,PLAYBACK_ISSUE,AUTO_HANDLE
+168,2144223,"Gee, thanks @115888 for randomly deleting my entire library. So pumped to redownload everything all over again",PLAYLIST_LIBRARY,ESCALATE
+177,2316884,"@115888 hi, my account has locked me out &amp; won't let me submit a new password request. Help please!",ACCOUNT_LOGIN_SECURITY,ESCALATE
+179,1174975,@SpotifyCares I've been dealing with a billing issue for more than an hour now. This entire thing could have been solved in less than 10 minutes.,PAYMENT_BILLING,ESCALATE
+186,113827,"@SpotifyCares My Facebook account is no longer active so I am unable to log into new devices, however I am still somehow logged into my account on several devices... how can I log in using my user ID: 1252945587",ACCOUNT_LOGIN_SECURITY,ESCALATE
+191,1169153,@SpotifyCares I have a premium subscription but Spotify account has changed to free account.Subscription on iPhone states it renews on 11/19,PREMIUM_SUBSCRIPTION,ESCALATE
+200,2912565,WHY ARE YOU GUYS STILL CHARGING ME I CANCELLED 3 MONTHS AGO @115888 @SpotifyCares,PAYMENT_BILLING,ESCALATE
+203,695465,"@115888 I paid for premium &amp; still hear commercials. You withdrew money from my account, but my spotify account shows no receipt. Now what?",ADS_FREE_TIER,ESCALATE
+204,2678323,@115888 trying to update my payment details and it takes me to this page and does not accept my NUS card number? NUS doesn't expire until 2020 https://t.co/9BMgYBiI6N,PAYMENT_BILLING,ESCALATE
+206,1942520,@115888 sooo if i already had the student discount last year can i still get hulu?,FAMILY_STUDENT_PLANS,AUTO_HANDLE
+209,789808,I really don't know why I keep paying for @115888 trash ass...how all my music disappear after I deleted and re downloaded the app #overit,PLAYLIST_LIBRARY,ESCALATE
+213,993170,@115888 How can i avail this 9 PESOS premium??,PREMIUM_SUBSCRIPTION,AUTO_HANDLE
+220,1486999,"@SpotifyCares Hello! I am trying to connect my Spotify with Hulu, but Hulu is saying that they are having trouble authorizing my account.",FAMILY_STUDENT_PLANS,AUTO_HANDLE
+233,555476,@SpotifyCares yo just got the advert for a years Spotify for £99. Can’t find out how to do it though? Send me a link x,PREMIUM_SUBSCRIPTION,AUTO_HANDLE
+248,6543,@117153 @SpotifyCares On the website I have premium but on the app on my phone is still says free. And my bank statement says it went through. I don’t know?,PREMIUM_SUBSCRIPTION,ESCALATE
+257,100138,"@SpotifyCares My playlists don't sync between the Desktop app (on Mac), my phone (Android), and the web player. They're all different. Please help.",PLAYLIST_LIBRARY,ESCALATE
+258,2708577,"@SpotifyCares Hello, I was suddenly logged out of my account today and am now unable to reset my password. My username is hannahbellbarnes and my email is __email__",ACCOUNT_LOGIN_SECURITY,ESCALATE
+260,1962511,Hey @116130 - is it possible to ACTUALLY shuffle music rather than just mix the 30/40 songs surrounding the one I selected?,PLAYBACK_ISSUE,AUTO_HANDLE
+264,914236,"@SpotifyCares hi ! My spotify app keeps playing random songs and not the one i want, its weird cuz when im on desktop works properly",PLAYBACK_ISSUE,AUTO_HANDLE
+277,2824398,"@SpotifyCares I already tried this trial deal, and ever since it ran out Im having 4-5 ads them a song then another chain of ads. Not the way it should work. And on top of it, when I listen to ads that should give 30 min ad free, I still get ads after. Horrible experience so far.",ADS_FREE_TIER,AUTO_HANDLE
+285,2175372,look spotify you can not just remove one man army from my downloads,DOWNLOAD_OFFLINE,AUTO_HANDLE
+313,1870663,"Again, @115888 lost all my saved music. And since I’m on the subway I don’t have a steady internet connection to redownload.",PLAYLIST_LIBRARY,ESCALATE
+340,466114,"@SpotifyCares when im listening to music it states that i can click the thing to get 30 minutes of ad free listening but when i go to click the part that has been there in the past, its not there so i cant do anything. it has done this about three times since i started listening today",ADS_FREE_TIER,AUTO_HANDLE
+404,611860,"@SpotifyCares I tried to get the premium student discount before realizing I'm not eligible, the payment went through &amp; I dont have premium",PAYMENT_BILLING,ESCALATE
+410,1423582,@SpotifyCares um ive been using student discount for premium for ages but it suddenly charged me full price for last month??????,FAMILY_STUDENT_PLANS,ESCALATE
+431,1289919,@SpotifyCares is anybody going to support? I am still waiting as a paying premium customer and cannot log in on any device. Disgraceful,ACCOUNT_LOGIN_SECURITY,ESCALATE
+456,927663,@115888 whats up with the iOS app deleting my saved music every 2-3 weeks? I love paying to re download music all the time https://t.co/Rx35ZoJF2L,DOWNLOAD_OFFLINE,AUTO_HANDLE
+461,1786256,"@SpotifyCares Hello, I believe a fraudulent charge was made on my Spotify acct. Please let me know who I can talk to at Spotify about this",PAYMENT_BILLING,ESCALATE
+465,1951379,@115888 video ads with sound playing frequently over the top of current tracks is poor form. Happening every couple of minutes...,ADS_FREE_TIER,AUTO_HANDLE
+468,2283045,@SpotifyCares any help on why my payment won't go through?,PAYMENT_BILLING,ESCALATE
+513,110095,@115888 There is any way to find the songs that I gave a thumb up on the radio? where do they go? I don't have any playlist or removed playlist related to that...,PLAYLIST_LIBRARY,AUTO_HANDLE
+538,2756246,@SpotifyCares I am supposed to have a premium subscription for two users through our cell phone provider and it says we don't have premium? help pls,PREMIUM_SUBSCRIPTION,ESCALATE
+610,2728381,"@SpotifyCares for the third time this year I've been charged in excess of the student rate, yet I'm still a student. Can you assist?",FAMILY_STUDENT_PLANS,ESCALATE
+627,2720903,@117168 WHY AM I GETTING BABY JOGGER ADS??! I DO NOT WANT BABIES MAKE IT STOP,ADS_FREE_TIER,AUTO_HANDLE
+743,2861290,I tried to deactivate my @115888 account more than once and only today did it I hope cancel because I have lost $50 on an app I DONT EVEN USE!!!,PAYMENT_BILLING,AUTO_HANDLE
+775,2350985,"@SpotifyCares Having issues updating my payment method on both mobile and desktop sites. Progress wheel keeps spinning when I hit ""continue"". Help?",PAYMENT_BILLING,AUTO_HANDLE
+776,655571,@118266 min kalo mau langganan tp gapunya kartu kredit gimana caranya ya? kebetulan saya pake indosat,PAYMENT_BILLING,AUTO_HANDLE

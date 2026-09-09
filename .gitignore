@@ -1,7 +1,6 @@
-﻿data/
-*.csv
-!taxonomy_validation_sample.csv
+﻿!taxonomy_validation_sample.csv
 !annotated_taxonomy_validation.csv
 .env
 *.env
 __pycache__/
+*.pyc

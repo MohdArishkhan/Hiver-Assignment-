@@ -1,0 +1,121 @@
+sample_id,conversation_index,tweet_id,text,label,confidence,notes
+31,5705,507424,"@SpotifyCares hi, will the £99 yearly subscription offer I just got still be available in January?",PREMIUM_SUBSCRIPTION,HIGH,Question about availability/continuation of a Premium offer.
+39,38338,2686915,"@SpotifyCares This is the guy, he even gets to override me! https://t.co/2Najgo8tm6",GENERAL_OTHER,LOW,Insufficient context to identify the issue.
+52,7037,609537,@118266 awalnya saya fine2 aja sama lagunya BTS tp diputer mulu adsnya di spotify saya jadi bosen,ADS_FREE_TIER,HIGH,Complaint about repeated advertisements.
+64,29938,2136531,forever bitter about @115888 taking away the messaging feature. years and years of sharing songs /convos with friends gone. with no warning.,FEATURE_REQUEST,HIGH,Complaint about a removed feature; feature-related category is the closest match.
+77,39608,2777730,Why? @116130 https://t.co/DnaLQsr7Cy,GENERAL_OTHER,LOW,Insufficient context.
+78,28735,2062596,WTF @115888?! You give me a pop up that Shania Twain released a new album (great shout - thanks I love her)....but didn't tell me there was a new Taylor Swift song today are you JOKING ME 😫,FEATURE_REQUEST,MEDIUM,Complaint about music discovery/recommendation/notification behavior; closest match is feature-related.
+82,22278,1801120,@115888 something weird happened with my account. Had to change pw to login. Playlists there that aren't mine. Saved music not mine.,ACCOUNT_LOGIN_SECURITY,HIGH,Strong account compromise/security indicators.
+86,41974,2917772,@115888 care to find out why the app is not working?!!!! 2 days in a row now!,APP_TECHNICAL_ISSUE,HIGH,General app malfunction.
+91,6580,571347,"Waiting for the ""your top songs of 2017"" playlist @115888",FEATURE_REQUEST,HIGH,Requests/anticipates the annual Top Songs playlist.
+92,21217,1756642,@117153 What's up regarding the entire catalogs of Beck and The War on Drugs? I can't play any of their music and others artists too,MUSIC_CONTENT_AVAILABILITY,HIGH,Multiple artist catalogs cannot be played; content availability issue.
+100,4013,366685,"@SpotifyCares Hi there, probably many people came over to you with the freezing problem. I reinstalled the app from Windows store",APP_TECHNICAL_ISSUE,HIGH,Application freezing problem.
+103,36935,2584507,@SpotifyCares I Listen to him all the time and no I did not get an email 😣😣🤪🤪😭😭😭😤😤@105934 helppp,GENERAL_OTHER,LOW,Missing context; unclear what email or issue is involved.
+112,29215,2080754,@115888 - my son has lost all account details &amp; his phone. How do I cancel Premium plse as he's also broken his phone &amp; I'm paying for it!,PREMIUM_SUBSCRIPTION,HIGH,Explicit request to cancel a Premium subscription.
+117,24775,189825,Students now get access to Hulu with Spotify Premium. And it’s still just $4.99/month. https://t.co/u2Yb1qUpnR,FAMILY_STUDENT_PLANS,MEDIUM,Student Premium plan information; not a support issue.
+131,1784,163727,@SpotifyCares I signed up for a student account but I was charged $9.99,FAMILY_STUDENT_PLANS,HIGH,Student plan was charged at the wrong/full price.
+138,10113,836548,@SpotifyCares Everything else is fine until this one ad comes up. Not sure if you’ll know it but it has pictures or photos being split up and spread out.,ADS_FREE_TIER,MEDIUM,Complaint about a specific advertisement.
+152,1839,166674,Can @115888 fix the android app so that it doesn't pause other android apps if Spotify is changing song on a completely different device?,APP_TECHNICAL_ISSUE,HIGH,Cross-device Android app behavior is malfunctioning.
+153,27902,2035020,@115888 cards not working... time for Pandora,PAYMENT_BILLING,HIGH,Payment cards are not working.
+158,21237,1757050,@115888 where’s reputation at ??,MUSIC_CONTENT_AVAILABILITY,HIGH,Question about availability of Reputation.
+166,32444,2289027,what does this even mean @115888 https://t.co/fA2j7HmX5s,GENERAL_OTHER,LOW,Insufficient context; refers only to an image/link.
+192,5887,77694,3 bulan Premium hanya Rp 4.990. Putar musik offline di mana saja. https://t.co/OaXjQ0a5lO,GENERAL_OTHER,HIGH,"Promotional/marketing message, not a support issue."
+197,43187,2986599,@SpotifyCares Fb Error reads “there is an error logging into your application. Try again later”,ACCOUNT_LOGIN_SECURITY,HIGH,Facebook login/authentication error.
+199,2529,225353,@SpotifyCares I reinstall but still the problem 😔,GENERAL_OTHER,LOW,Problem is unspecified.
+208,15529,1244499,@SpotifyCares ... app on my laptop is not showing that I have a Premium account,PREMIUM_SUBSCRIPTION,HIGH,Premium status is not recognized in the app.
+211,1418,130876,Spotify has removed all my tracks it appears,PLAYLIST_LIBRARY,HIGH,User's saved tracks/library have disappeared.
+212,12952,1052725,@SpotifyCares Been having trouble using the web player in Chrome lately (both Windows PC and Chromebook). Any tips to get it working again?,APP_TECHNICAL_ISSUE,HIGH,Web player functionality problem.
+214,20429,1695220,"@117153 The Spotify web player is not working in Google Chrome. Sends me to a ""Bad Request"" page.",APP_TECHNICAL_ISSUE,HIGH,Web player/browser error.
+217,43021,2972071,It genuinely upsets me that the Piglet's Big Movie soundtrack is not on Spotify. @115888 explain yourself,MUSIC_CONTENT_AVAILABILITY,HIGH,Specific soundtrack is unavailable.
+236,37418,2614482,Why isn't there an option to block artists if you don't want them on shuffle its annoying @115888 please add an option to block,FEATURE_REQUEST,HIGH,Requests artist-blocking functionality.
+244,5966,532738,@SpotifyCares how do I switch from monthly billing to the yearly plan?,PAYMENT_BILLING,HIGH,Question about changing billing frequency/payment plan.
+245,30946,2203753,What's up with the 39% battery usage @SpotifyCares?? https://t.co/XA0tc8amDf,APP_TECHNICAL_ISSUE,HIGH,Excessive battery usage is an app technical/performance issue.
+246,8025,668711,Couldnt even wait until the end of the month to put me back to a basic account but still took money out of my final check? @SpotifyCares,PAYMENT_BILLING,HIGH,User was downgraded but still charged.
+247,20710,1715187,@115888 what’s the story with you guys not having this on your system? @519456 not happy about it either. https://t.co/TeavpJI8pE,GENERAL_OTHER,LOW,Insufficient context about what is missing.
+266,37664,2625422,Hello @SpotifyCares I have emailed you about artist @741597 account being hacked. Pls assist or reply to __email__,ACCOUNT_LOGIN_SECURITY,HIGH,Explicit hacked-account/security issue.
+271,16175,1287127,@115888 Some hussy took over my account pls help https://t.co/nHOOFbkuc4,ACCOUNT_LOGIN_SECURITY,HIGH,Account takeover/security issue.
+278,41816,89502,@SpotifyCares It’s been over a year since Lemonade came out. No more “looking into it” 🍋,MUSIC_CONTENT_AVAILABILITY,MEDIUM,Likely refers to unavailable music content; limited context.
+281,36147,2536593,Is there a way to make a playlist that is the mutually liked recommendations from two different @115888 accounts? @721583 (for marital harmony on long car journeys. Like a Venn diagram of discover weeklies),FEATURE_REQUEST,HIGH,Requests a shared/recombined playlist recommendation feature.
+283,35958,2517271,The new MacOS High Sierra update has broke the media controls on my MBPro keyboard - they no longer function?! @SpotifyCares @AppleSupport,APP_TECHNICAL_ISSUE,HIGH,Media-control integration is broken after OS update.
+293,6205,555498,@115888 why do you the right to delete all my saved playlists. 😡🤬😡🤬. Subscription cancelled 👋,PLAYLIST_LIBRARY,HIGH,Saved playlists were deleted.
+294,12448,1016885,@SpotifyCares No dices. Tryed that allready,GENERAL_OTHER,LOW,Insufficient context.
+308,5512,496133,@116130 sent you a DM received an email that looks like a scam pretending to be you?,ACCOUNT_LOGIN_SECURITY,MEDIUM,Potential account/security phishing concern.
+310,13517,1096821,@115888 I just started the premium 30-day trial. When I signed-in in my iphone it said 7-day trial. How long does this actually last?,PREMIUM_SUBSCRIPTION,HIGH,Premium trial duration/status question.
+319,31510,2239721,@SpotifyCares It's for my son so let me get his info,GENERAL_OTHER,LOW,Contextual reply without a specific issue.
+325,9259,189845,@115888 What if I already have Hulu and spotify?,FAMILY_STUDENT_PLANS,HIGH,Question about combining/existing Hulu and Spotify plans.
+328,38012,2653011,@SpotifyCares Do you guys know when it will be available?,GENERAL_OTHER,LOW,Object of 'it' is unclear without context.
+334,42271,2920785,Okay I thought I was the only one. But @115888 is down 🙃,APP_TECHNICAL_ISSUE,HIGH,Spotify service/app is reported as down.
+345,39082,2746349,"@SpotifyCares logged out of both devices, restarted the apps, logged back in, still out of sync (see pics) https://t.co/QtCxpjg8BR",APP_TECHNICAL_ISSUE,HIGH,Devices remain out of sync after troubleshooting.
+359,23125,1834457,@spotifycares and yes I have actively been using the 'dont play any songs from this artist' option,FEATURE_REQUEST,MEDIUM,Context suggests a recommendation/artist-blocking feature issue.
+361,25808,1935557,@SpotifyCares Hi guys. Lost all my album downloads again. Must be 4th time. I'm on the verge of cancelling premium unless this is sorted,DOWNLOAD_OFFLINE,HIGH,Downloaded albums are repeatedly disappearing.
+365,3026,274287,"WTF @115888?! Stop eating my mobile data, please. There's a reason I have premium to download songs... https://t.co/60L7xHRRiF",DOWNLOAD_OFFLINE,HIGH,Concern is about downloading/offline behavior consuming mobile data.
+367,12307,1000020,Hi how can I keep Christmas music off my discover weekly/release radar or block it completely @SpotifyCares,FEATURE_REQUEST,HIGH,Requests control over recommendation content.
+371,26056,1944711,@SpotifyCares I phone 7 plus https://t.co/OVdg8fyA1A,GENERAL_OTHER,LOW,Device information with no stated issue.
+382,39956,2794511,"@SpotifyCares Hey, I can't upgrade to premium. ""503 Service Unavailable. No server is available to handle this request."" Android app and web app.",PREMIUM_SUBSCRIPTION,HIGH,Unable to upgrade to Premium; server error occurs during subscription upgrade.
+383,36144,2535449,"Waoh, @115888 just collapsed before my eyes (and ears) ;P #Spotify #develop #developer https://t.co/qTHfcjGdgP",APP_TECHNICAL_ISSUE,MEDIUM,Indicates Spotify/service crashed or went down.
+389,1645,141169,"@147834 @SpotifyCares For that matter, in India too..",GENERAL_OTHER,LOW,Too little context to identify the underlying issue.
+395,13384,1085889,hey @115888 you don't have Owl City's Maybe I'm Dreaming so what the heck gives huh?,MUSIC_CONTENT_AVAILABILITY,HIGH,Specific album is unavailable.
+397,18054,1481964,@115888 why did you take Like that by @46419 off? I know it was in there!!!😭💔😫,MUSIC_CONTENT_AVAILABILITY,HIGH,Previously available song was removed.
+414,24291,115255,"@117153 @SpotifyCares Hello, i signed up to an existing Family plan, but my account dont upgrade...",FAMILY_STUDENT_PLANS,HIGH,Family-plan upgrade problem.
+428,6046,541658,"@SpotifyCares I can't use your contact form to delete/recreate my account because it requires logging into Facebook, which is why I need to delete/recreate my account to begin with. How can I do this without interacting with Facebook in any way?",ACCOUNT_LOGIN_SECURITY,HIGH,Account management is blocked by Facebook login requirement.
+432,12515,1021778,"Hey, Spotify, are you high? Help me here @SpotifyCares https://t.co/6coRrElrgw",GENERAL_OTHER,LOW,Insufficient context; issue is only in an external image/link.
+437,4771,431437,@116130 Please could you let me have a contact number. I have an urgent issue but can't speak to anyone!!,GENERAL_OTHER,HIGH,Contact/support request without a specific issue.
+439,18486,1517566,"@SpotifyCares Answer my DM! Urgent, thanks.",GENERAL_OTHER,LOW,Support follow-up with no specific issue.
+441,27031,1988904,"@SpotifyCares one of my albums I'd accidentally listed under ""singles"" on my artist page. How can I fix that?",GENERAL_OTHER,MEDIUM,Artist metadata/catalog classification issue; no dedicated taxonomy category.
+444,10250,847128,@SpotifyCares That's gonna be 1.0.65.320.gac7a8e02,GENERAL_OTHER,LOW,Version information only.
+446,11166,902977,"@SpotifyCares Most of the music plays, it is just the ones I really want to listen that don't play",PLAYBACK_ISSUE,HIGH,Selected music does not play.
+470,34813,2436144,@SpotifyCares There’s nothing to opt out from? https://t.co/SLE3pCxZhC,GENERAL_OTHER,LOW,Exact subject is unclear from the provided text.
+475,37984,2646408,"@SpotifyCares The latest version of everything. Your forums are full of people with the same problem and have been for months and months and months. Sometimes doesn't play at all, other times broken audio or double speed audio. Apple music works perfectly. Go figure",PLAYBACK_ISSUE,HIGH,Severe playback/audio malfunction.
+476,27443,2009580,@115888 any word on an iPhone X update?,APP_TECHNICAL_ISSUE,HIGH,Question about iPhone X app optimization/update.
+485,10061,833834,@115888 is trying to tell me that im not in college,FAMILY_STUDENT_PLANS,HIGH,Student eligibility/verification issue.
+511,34112,2380909,So I tried to add @115888 to my @1383 and I don’t see the option can someone explain this too me? I want to add my music on my profile. I don’t see it.,GENERAL_OTHER,MEDIUM,Artist/profile integration issue is outside the main taxonomy.
+512,27664,2025205,@115888 why did this song disappear? https://t.co/t5ViI5PFnB,MUSIC_CONTENT_AVAILABILITY,HIGH,Specific song disappeared.
+514,37922,1963119,@115888 Not sure if it does it for any other artists. Currently not for anything in my library💁‍♀️,GENERAL_OTHER,LOW,Incomplete context; no specific issue can be identified.
+516,12436,1015897,Hey @115888 could you please change the picture to Louis Tomlinson and add his new song ‘just like you’ to the playlist? 😊 https://t.co/4cGa8u8MPP,FEATURE_REQUEST,HIGH,Requests changes/additions to a playlist.
+518,2758,245632,"@SpotifyCares I have emailed a few times, please can someone get back to me about a brand curated playlist",GENERAL_OTHER,MEDIUM,Support follow-up about a curated playlist; exact issue/request is unclear.
+532,9344,780949,".@115888 it's 2017, add an easily accessible sleep timer to your damn app already. Sincerely, every user. #SleepSpotifySleep #UpAllNight",FEATURE_REQUEST,HIGH,Explicit request for a sleep-timer feature.
+536,13906,1120147,"@115888 Hello, i cannot log in to Spotify bc it's set offline. How to connect to online?",ACCOUNT_LOGIN_SECURITY,HIGH,Unable to log in/connect; account access issue.
+547,12209,769717,@115888 - does my time capsule ever change music? Cool playlist Spotify made me- but does it ever change to other cool old music?,GENERAL_OTHER,HIGH,General informational question about Time Capsule behavior.
+553,12567,1025760,@115888 have charged me £9.99 for October because @260711 ended my student status!!! I've cancelled my Spotify premium because I'm angry,FAMILY_STUDENT_PLANS,HIGH,Student-status change caused loss of discounted pricing.
+561,25410,1919710,Good y'all betta. It was already on there when he dropped and BOOM shit is gone https://t.co/Zqay5W3va4,MUSIC_CONTENT_AVAILABILITY,MEDIUM,Likely previously available music content was removed; context is limited.
+576,4835,438415,why RBD is not on spotify??? @SpotifyCares,MUSIC_CONTENT_AVAILABILITY,HIGH,Specific artist/content is unavailable.
+581,36565,2560544,Unable to add a family member. Getting undefined problem when submitting @SpotifyCares,FAMILY_STUDENT_PLANS,HIGH,Family member cannot be added.
+582,34490,2408816,How do I get a presale code for @94016 ??? @115888 didn't hook me up this time. Help a girl out!,GENERAL_OTHER,MEDIUM,Presale-code issue does not fit the defined categories.
+590,19428,1355790,We're investigating some payment issues and working hard to get things fixed. We'll provide updates here as we receive them.,PAYMENT_BILLING,HIGH,Explicit payment-issue update.
+602,4127,375401,@115888 https://t.co/ZdMtJJlgdk,GENERAL_OTHER,LOW,Only a link is provided; insufficient context.
+608,26965,1984002,So now @115888 making us put our credit card info for free 30 day premium account,PAYMENT_BILLING,MEDIUM,Complaint about requiring payment-card information for a trial.
+618,29693,2118763,"@SpotifyCares got logged out of my account on my phone, can't remember password. Don't have access to old email address for reset. Help?😭",ACCOUNT_LOGIN_SECURITY,HIGH,Login/password recovery problem.
+622,8325,690388,@spotifycares Just because I had Mi gente on my song list at one point the daily mix wont stop spamming me with similar songs... fix this,FEATURE_REQUEST,HIGH,Requests better control over recommendation behavior.
+626,38361,2689660,"@SpotifyCares https://t.co/3tjNYbHuEr Google Chrome, MacBook Pro",GENERAL_OTHER,LOW,Browser/device information with no stated issue.
+628,40001,2795582,@SpotifyCares omg FIX THIS (please!) no one else is on my account ); https://t.co/MeF89gXQER,GENERAL_OTHER,LOW,"Likely account-related, but the actual issue is unclear from the text/link."
+633,2116,186339,Hey @117168 why can’t all songs look like this instead of what we have! I like this look better https://t.co/ai47C3MEtN,FEATURE_REQUEST,HIGH,Requests a different UI/design for songs.
+635,29835,2128563,@115888 we need that new @20582 tape. what’s good?!,MUSIC_CONTENT_AVAILABILITY,MEDIUM,Likely asks for specific music to be released/available.
+637,7780,654656,@115888 A stávající uživatele tradičně nic...,GENERAL_OTHER,LOW,Insufficient context; translation/context is unclear.
+640,24111,1866913,Is anyone else having issues with their @115888 and every damn song skipping like an old scratched vinyl record??,PLAYBACK_ISSUE,HIGH,Songs are repeatedly skipping during playback.
+663,17308,1406404,"@117153 brand new to using Spotify, web player is having issues-stops playing songs and says there was an error. What's going on?",PLAYBACK_ISSUE,HIGH,Web playback stops and produces an error.
+664,36977,2588873,@117153 The sidebar adverts have started to play music over the top of the songs I'm listening to. Any idea how I can stop this? #annoying,ADS_FREE_TIER,HIGH,Advertisements interrupt music playback.
+670,35352,2477831,WHERE IS THE ACCENT? WHEW is Beyonce Knowles??? @115888 @301522 @96402 https://t.co/t2E3YE1h7S,GENERAL_OTHER,MEDIUM,Likely artist/name metadata issue; no dedicated taxonomy category.
+672,21657,1780804,@117153 Hey my card isnt working for spotify! i've tried all the troubleshooting but nothing is working. Please help!,PAYMENT_BILLING,HIGH,Payment card is not working.
+673,32164,2276886,Trying to figure out why @115888 is not letting hear @89343 's new ep while I shower 🤔😒,MUSIC_CONTENT_AVAILABILITY,HIGH,Specific new EP is unavailable.
+675,1512,141200,@115888 Hi! I have an HIFI Onkyo TX-NR509 and I cannot longer connect to spotify. User and password are ok and the account is Premium. What’s the mess?,APP_TECHNICAL_ISSUE,HIGH,Third-party device connection is failing.
+676,4591,416200,"@SpotifyCares I can't remove the battery, but let me try it.",GENERAL_OTHER,LOW,Context is incomplete; no clear Spotify issue.
+685,21667,1781047,Both @115888 and @115940 for 4.99? We see who really lookin out for the students.,FAMILY_STUDENT_PLANS,HIGH,Commentary about student pricing/offer.
+693,15937,129743,Zero ads. All music. Get 3 months Premium for ₱9. https://t.co/QNQBeV48tP,GENERAL_OTHER,HIGH,Promotional/marketing message.
+697,32622,2293236,@SpotifyCares In my library,GENERAL_OTHER,LOW,Insufficient context.
+701,16576,1335498,@SpotifyCares Please. TYVM! &lt;3,GENERAL_OTHER,LOW,No specific issue or request is stated.
+715,16760,1349641,@115888 @SpotifyCares When did this start? I'm playing music on browser and my phone opens a notification with the song info and controls.,APP_TECHNICAL_ISSUE,MEDIUM,Unexpected device notification/control behavior.
+724,16467,1312616,"Hey @115888 is there anyway I can turn off the ""this is..."" playlists? I kinda want to hear all the songs not a few that are picked for me",FEATURE_REQUEST,HIGH,Requests ability to disable curated playlist behavior.
+730,10248,846801,"Really frustrating that my biggest songs aren't on my @115888 profile bc I was labeled as the ""featured"" artist. Such a stupid feature 🙄",GENERAL_OTHER,MEDIUM,Artist-profile/catalog attribution issue outside the taxonomy.
+733,35961,2518461,I wish @115888 had mixtapes,FEATURE_REQUEST,HIGH,Requests mixtape functionality.
+735,8796,724354,"@SpotifyCares Logged out, cleared cache, restarted Chrome, logged back in. Song took 2 minutes to start playing, stalled after 10 seconds",PLAYBACK_ISSUE,HIGH,Playback is extremely slow and stalls.
+737,5736,508847,@SpotifyCares my account was charged for Premium this month but it still says I have the free account.,PAYMENT_BILLING,HIGH,User was charged but account still shows Free.
+749,3146,286418,@115888 can you add some Got7 and Twice already....more than just one song each. Please and thank you 💕,MUSIC_CONTENT_AVAILABILITY,HIGH,Requests more music from specific artists to be available.
+755,21956,1790160,"@SpotifyCares I just dumped the whole thing. I'd expect its your job to figure this out, isn't it. I'd expect some auto-updater left over garbage coupled with audio cache. But who knows",APP_TECHNICAL_ISSUE,MEDIUM,Discussion of application/cache/update technical problems.
+756,37779,2633276,@115888 why did you take away the preview option when you hold down on a song?!,FEATURE_REQUEST,HIGH,Requests return of the preview feature.
+758,31527,2239755,Anybody know when @115888 is hitting South African shores?,MUSIC_CONTENT_AVAILABILITY,HIGH,Service availability in South Africa.
+770,32127,2275469,@SpotifyCares a dead man is revived and you nonchalantly ask what's happening like you have no idea,GENERAL_OTHER,LOW,Insufficient context.
+772,34012,2371469,@115888 really frustrating when my entire maxed out library of music disappears,PLAYLIST_LIBRARY,HIGH,Entire music library disappears.
+773,2856,258956,@115888 How do I get this sorted. Would they have access to all my payment info too?!?!,ACCOUNT_LOGIN_SECURITY,MEDIUM,Concern about unauthorized access to payment information; context is limited.
+784,7940,664579,@SpotifyCares No luck. Going to try register from the app itself quickly,GENERAL_OTHER,LOW,Troubleshooting/registration follow-up without enough context.
+792,36841,2580715,isn't the point in paying for music is so it actually downloads and plays when you want it to? Thanks @115888,DOWNLOAD_OFFLINE,HIGH,Complaint about downloaded music not being usable as expected.
+799,28911,1852370,"yo @115888 , when am i gunna be able to check who follows my playlist??",FEATURE_REQUEST,HIGH,Requests ability to view playlist followers.
