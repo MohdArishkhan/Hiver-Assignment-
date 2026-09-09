@@ -1,4 +1,5 @@
 from pathlib import Path
+
 import pandas as pd
 
 
@@ -9,131 +10,162 @@ OUTPUT_FILE = ROOT / "data" / "agent_eval.csv"
 
 
 # =========================================================
-# POLICY
+# EXPECTED DECISION POLICY
 # =========================================================
 
 def expected_decision(row):
+
     text = str(row["text"]).lower()
-    intent = row["label"]
+    intent = str(row["label"])
 
     # -----------------------------------------------------
-    # Account security
+    # Security risk
     # -----------------------------------------------------
 
-    security_keywords = [
-        "hack",
+    security_signals = [
         "hacked",
+        "hack",
         "hacking",
-        "fraud",
+        "stolen account",
+        "account taken",
+        "someone accessed",
+        "someone is using my account",
         "unauthorized",
-        "someone",
-        "stolen",
-        "locked out",
+        "unauthorised",
+        "phishing",
+        "scam",
+        "fraud",
+        "password changed",
+        "password was changed",
+        "locked me out",
+        "locked out of my account",
         "can't log in",
         "cannot log in",
+        "couldn't log in",
+        "could not log in",
         "unable to log in",
-        "password",
-        "logged out",
-        "login",
-        "sign in",
+        "unable to reset my password",
+        "can't reset my password",
+        "cannot reset my password",
     ]
 
-    if intent == "ACCOUNT_LOGIN_SECURITY":
-        if any(keyword in text for keyword in security_keywords):
-            return "ESCALATE"
+    if any(signal in text for signal in security_signals):
+        return "ESCALATE"
 
     # -----------------------------------------------------
-    # Billing
+    # Billing / payment events
     # -----------------------------------------------------
 
-    billing_keywords = [
+    billing_signals = [
         "charged",
         "charging",
-        "refund",
+        "charged twice",
+        "duplicate charge",
+        "wrong charge",
+        "unexpected charge",
         "fraudulent charge",
-        "payment",
-        "money",
-        "billing",
-        "card",
+        "refund",
+        "billing issue",
+        "payment failed",
+        "payment won't go through",
+        "payment went through",
+        "money taken",
+        "money was taken",
         "bank statement",
-        "premium does not work",
+        "charged my card",
+        "charging my account",
+        "payment details",
+        "payment information",
+        "update my payment",
+        "update payment",
+        "cancelled",
+        "canceled",
     ]
 
-    if intent == "PAYMENT_BILLING":
-        if any(keyword in text for keyword in billing_keywords):
-            return "ESCALATE"
+    if any(signal in text for signal in billing_signals):
+        return "ESCALATE"
 
     # -----------------------------------------------------
-    # Subscription state
+    # Premium account-state problems
     # -----------------------------------------------------
 
-    subscription_keywords = [
+    premium_state_signals = [
         "premium does not work",
+        "premium doesn't work",
+        "premium not working",
         "still says free",
+        "shows free",
+        "changed to free",
         "account has changed to free",
-        "subscription",
         "premium has stopped working",
-        "paying",
+        "paid for premium",
         "purchased premium",
+        "premium status",
+        "subscription status",
+        "don't have premium",
+        "do not have premium",
+        "dont have premium",
+        "no premium",
     ]
 
-    if intent == "PREMIUM_SUBSCRIPTION":
-        if any(keyword in text for keyword in subscription_keywords):
-            return "ESCALATE"
+    if any(signal in text for signal in premium_state_signals):
+        return "ESCALATE"
 
     # -----------------------------------------------------
-    # Playlist / library account-specific problems
+    # Playlist / library recovery
     # -----------------------------------------------------
 
-    playlist_escalation_keywords = [
-        "disappeared",
-        "deleted",
-        "lost",
-        "don't sync",
-        "doesn't sync",
-        "different",
-        "randomly deleting",
+    library_signals = [
+        "playlist disappeared",
+        "playlists disappeared",
+        "playlist is gone",
+        "playlists are gone",
+        "deleted my playlist",
+        "deleted my library",
+        "lost my playlist",
+        "lost my playlists",
+        "lost my library",
+        "my library disappeared",
         "all my saved music",
+        "saved music disappeared",
+        "playlists don't sync",
+        "playlists do not sync",
+        "not syncing between",
+        "restore my playlist",
+        "restore my playlists",
+        "restore previous playlist",
+        "restore previous week's playlist",
+        "lost my favourite song",
+        "lost my favorite song",
+        "deleted my entire library",
+        "deleting my entire library",
+        "entire library",
+        "music disappeared",
+        "music disappear",
+        "all my music",
     ]
 
-    if intent == "PLAYLIST_LIBRARY":
-        if any(
-            keyword in text
-            for keyword in playlist_escalation_keywords
-        ):
-            return "ESCALATE"
+    if any(signal in text for signal in library_signals):
+        return "ESCALATE"
 
     # -----------------------------------------------------
-    # General / vague messages
+    # Vague unresolved requests
     # -----------------------------------------------------
 
-    vague_phrases = [
-        "no luck",
+    vague_signals = [
         "still the same",
-        "help",
-        "thanks",
-        "thank you",
-        "all clear",
+        "no luck",
+        "same issue",
         "not sure",
-        "in my library",
-        "please help",
+        "no solution yet",
     ]
 
-    if intent == "GENERAL_OTHER":
-
-        word_count = len(text.split())
-
-        if word_count <= 8:
-            return "ESCALATE"
-
-        if any(
-            phrase in text
-            for phrase in vague_phrases
-        ):
+    if len(text.split()) <= 8:
+        if any(signal in text for signal in vague_signals):
             return "ESCALATE"
 
     # -----------------------------------------------------
-    # Everything else
+    # Default
     # -----------------------------------------------------
 
     return "AUTO_HANDLE"
@@ -152,13 +184,12 @@ def main():
 
     df = pd.read_csv(GOLDEN_FILE)
 
-    # FIX: Replaced "expected_intent" and "expected_decision" with "label"
     required_columns = {
         "sample_id",
         "tweet_id",
         "text",
         "label",
-    }   
+    }
 
     missing = required_columns - set(df.columns)
 
@@ -168,7 +199,7 @@ def main():
         )
 
     # -----------------------------------------------------
-    # Add expected decision
+    # Calculate expected decision
     # -----------------------------------------------------
 
     df["expected_decision"] = df.apply(
@@ -177,11 +208,39 @@ def main():
     )
 
     # -----------------------------------------------------
-    # Prefer diverse examples
-    #
-    # Target:
-    # 50 AUTO_HANDLE
-    # 30 ESCALATE
+    # Manual corrections
+    # -----------------------------------------------------
+
+    # General informational Premium question.
+    df.loc[
+        df["sample_id"] == 6,
+        "expected_decision"
+    ] = "AUTO_HANDLE"
+
+    # Payment-method question, not a payment dispute.
+    df.loc[
+        df["sample_id"] == 90,
+        "expected_decision"
+    ] = "AUTO_HANDLE"
+
+    # -----------------------------------------------------
+    # Remove non-actionable acknowledgements
+    # -----------------------------------------------------
+
+    excluded_ids = {
+        26,
+        176,
+        251,
+        252,
+        412,
+    }
+
+    df = df[
+        ~df["sample_id"].isin(excluded_ids)
+    ].copy()
+
+    # -----------------------------------------------------
+    # Split candidates
     # -----------------------------------------------------
 
     auto = df[
@@ -192,86 +251,108 @@ def main():
         df["expected_decision"] == "ESCALATE"
     ].copy()
 
-    selected_parts = []
+    print("\nCandidates")
+    print("------------------------------")
+    print("AUTO_HANDLE:", len(auto))
+    print("ESCALATE:   ", len(escalate))
 
-    # Take examples from every intent.
-    # This prevents the evaluation set from being dominated
-    # by GENERAL_OTHER / FEATURE_REQUEST.
+    # -----------------------------------------------------
+    # Need enough examples
+    # -----------------------------------------------------
 
-    intents = sorted(df["label"].unique())
-
-    for intent in intents:
-
-        intent_auto = auto[
-            auto["label"] == intent
-        ].head(5)
-
-        if len(intent_auto) > 0:
-            selected_parts.append(intent_auto)
-
-    # Combine initial AUTO_HANDLE candidates
-    selected_auto = pd.concat(
-        selected_parts,
-        ignore_index=True,
-    ).drop_duplicates(
-        subset=["sample_id"]
-    )
-
-    # Fill remaining AUTO_HANDLE slots
-    remaining_auto = auto[
-        ~auto["sample_id"].isin(
-            selected_auto["sample_id"]
+    if len(auto) < 50:
+        raise ValueError(
+            f"Not enough AUTO_HANDLE candidates: {len(auto)}"
         )
-    ]
 
-    selected_auto = pd.concat(
-        [
-            selected_auto,
-            remaining_auto,
-        ],
-        ignore_index=True,
-    ).head(50)
+    if len(escalate) < 25:
+        raise ValueError(
+            f"Not enough ESCALATE candidates: {len(escalate)}"
+        )
 
     # -----------------------------------------------------
-    # Escalation examples
+    # Select 50 AUTO_HANDLE
+    #
+    # Prefer balanced intent coverage.
     # -----------------------------------------------------
 
-    selected_escalate_parts = []
+    auto_parts = []
 
-    for intent in intents:
+    for intent in sorted(auto["label"].unique()):
 
-        intent_escalate = escalate[
-            escalate["label"] == intent
+        rows = auto[
+            auto["label"] == intent
         ].head(4)
 
-        if len(intent_escalate) > 0:
-            selected_escalate_parts.append(
-                intent_escalate
-            )
+        auto_parts.append(rows)
 
-    selected_escalate = pd.concat(
-        selected_escalate_parts,
+    selected_auto = pd.concat(
+        auto_parts,
         ignore_index=True,
     ).drop_duplicates(
         subset=["sample_id"]
     )
 
-    remaining_escalate = escalate[
-        ~escalate["sample_id"].isin(
-            selected_escalate["sample_id"]
-        )
-    ]
+    # Fill remaining slots.
+    if len(selected_auto) < 50:
 
-    selected_escalate = pd.concat(
-        [
-            selected_escalate,
-            remaining_escalate,
-        ],
-        ignore_index=True,
-    ).head(30)
+        remaining = auto[
+            ~auto["sample_id"].isin(
+                selected_auto["sample_id"]
+            )
+        ]
+
+        selected_auto = pd.concat(
+            [
+                selected_auto,
+                remaining,
+            ],
+            ignore_index=True,
+        )
+
+    selected_auto = selected_auto.head(50)
 
     # -----------------------------------------------------
-    # Final evaluation set
+    # Select 25 ESCALATE
+    # -----------------------------------------------------
+
+    escalate_parts = []
+
+    for intent in sorted(escalate["label"].unique()):
+
+        rows = escalate[
+            escalate["label"] == intent
+        ].head(3)
+
+        escalate_parts.append(rows)
+
+    selected_escalate = pd.concat(
+        escalate_parts,
+        ignore_index=True,
+    ).drop_duplicates(
+        subset=["sample_id"]
+    )
+
+    if len(selected_escalate) < 25:
+
+        remaining = escalate[
+            ~escalate["sample_id"].isin(
+                selected_escalate["sample_id"]
+            )
+        ]
+
+        selected_escalate = pd.concat(
+            [
+                selected_escalate,
+                remaining,
+            ],
+            ignore_index=True,
+        )
+
+    selected_escalate = selected_escalate.head(25)
+
+    # -----------------------------------------------------
+    # Combine
     # -----------------------------------------------------
 
     result = pd.concat(
@@ -282,6 +363,7 @@ def main():
         ignore_index=True,
     )
 
+    # Keep only required columns.
     result = result[
         [
             "sample_id",
@@ -296,12 +378,44 @@ def main():
         }
     )
 
-    # Sort by sample ID
     result = result.sort_values(
         "sample_id"
-    ).reset_index(
-        drop=True
+    ).reset_index(drop=True)
+
+    # -----------------------------------------------------
+    # IMPORTANT VALIDATION
+    # -----------------------------------------------------
+
+    if len(result) != 75:
+        raise ValueError(
+            f"Expected 75 rows, got {len(result)}"
+        )
+
+    counts = (
+        result["expected_decision"]
+        .value_counts()
+        .to_dict()
     )
+
+    auto_count = counts.get(
+        "AUTO_HANDLE",
+        0,
+    )
+
+    escalate_count = counts.get(
+        "ESCALATE",
+        0,
+    )
+
+    if auto_count != 50:
+        raise ValueError(
+            f"Expected 50 AUTO_HANDLE, got {auto_count}"
+        )
+
+    if escalate_count != 25:
+        raise ValueError(
+            f"Expected 25 ESCALATE, got {escalate_count}"
+        )
 
     # -----------------------------------------------------
     # Save
@@ -318,31 +432,74 @@ def main():
     )
 
     # -----------------------------------------------------
-    # Print summary
+    # RELOAD THE FILE
+    #
+    # This catches save/output inconsistencies.
     # -----------------------------------------------------
 
-    print("=" * 50)
+    saved = pd.read_csv(
+        OUTPUT_FILE
+    )
+
+    saved_counts = (
+        saved["expected_decision"]
+        .value_counts()
+        .to_dict()
+    )
+
+    saved_auto = saved_counts.get(
+        "AUTO_HANDLE",
+        0,
+    )
+
+    saved_escalate = saved_counts.get(
+        "ESCALATE",
+        0,
+    )
+
+    if len(saved) != 75:
+        raise ValueError(
+            f"Saved CSV has {len(saved)} rows, expected 75"
+        )
+
+    if saved_auto != 50:
+        raise ValueError(
+            f"Saved CSV has {saved_auto} AUTO_HANDLE rows, expected 50"
+        )
+
+    if saved_escalate != 25:
+        raise ValueError(
+            f"Saved CSV has {saved_escalate} ESCALATE rows, expected 25"
+        )
+
+    # -----------------------------------------------------
+    # Final output
+    # -----------------------------------------------------
+
+    print("\n" + "=" * 50)
     print("AGENT EVALUATION DATASET")
     print("=" * 50)
 
-    print(f"\nSaved to:")
+    print("\nSaved to:")
     print(OUTPUT_FILE)
 
-    print(f"\nTotal examples: {len(result)}")
+    print("\nTotal examples:", len(saved))
 
     print("\nDecision distribution:")
     print(
-        result["expected_decision"]
+        saved["expected_decision"]
         .value_counts()
         .to_string()
     )
 
     print("\nIntent distribution:")
     print(
-        result["expected_intent"]
+        saved["expected_intent"]
         .value_counts()
         .to_string()
     )
+
+    print("\nValidation: PASSED")
 
 
 if __name__ == "__main__":

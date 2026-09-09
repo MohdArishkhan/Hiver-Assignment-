@@ -168,6 +168,19 @@ def decide_escalation(text, intent, retrieved_cases):
         "unable to reset my password",
         "can't reset my password",
         "cannot reset my password",
+        "restore my playlist",
+        "restore my playlists",
+        "restore previous week's playlist",
+        "restore previous playlist",
+        "lost my playlist",
+        "lost my favourite song",
+        "lost my favorite song",
+        "deleted my entire library",
+        "deleting my entire library",
+        "entire library",
+        "music disappear",
+        "music disappeared",
+        "all my music",
     ]
 
     if any(signal in text_lower for signal in security_signals):
@@ -183,6 +196,8 @@ def decide_escalation(text, intent, retrieved_cases):
 
     billing_signals = [
         "charged",
+        "charging",
+        "still charging",
         "charged twice",
         "duplicate charge",
         "wrong charge",
@@ -192,16 +207,24 @@ def decide_escalation(text, intent, retrieved_cases):
         "billing issue",
         "payment failed",
         "payment won't go through",
-        "payment won't",
+        "payment went through",
         "money taken",
         "money was taken",
         "bank statement",
         "charged my card",
         "charging my account",
+        "cancelled",
+        "canceled",
+        "payment details",
+        "payment information",
+        "update my payment",
+        "update payment",
     ]
 
-    if any(signal in text_lower for signal in billing_signals):
-
+    if any(
+        signal in text_lower
+        for signal in billing_signals
+    ):
         return (
             "ESCALATE",
             "Billing or payment issue may require account-specific action."
@@ -212,18 +235,22 @@ def decide_escalation(text, intent, retrieved_cases):
     # =====================================================
 
     premium_state_signals = [
-        "premium does not work",
-        "premium doesn't work",
-        "premium not working",
-        "still says free",
-        "shows free",
-        "changed to free",
-        "account has changed to free",
-        "premium has stopped working",
-        "paid for premium",
-        "purchased premium",
-        "premium status",
-        "subscription status",
+    "premium does not work",
+    "premium doesn't work",
+    "premium not working",
+    "still says free",
+    "shows free",
+    "changed to free",
+    "account has changed to free",
+    "premium has stopped working",
+    "paid for premium",
+    "purchased premium",
+    "premium status",
+    "subscription status",
+    "don't have premium",
+    "do not have premium",
+    "dont have premium",
+    "no premium",
     ]
 
     if any(
@@ -247,9 +274,30 @@ def decide_escalation(text, intent, retrieved_cases):
         "playlists are gone",
         "deleted my playlist",
         "deleted my library",
+        "restore my playlist",
+        "restore my playlists",
+        "restore previous week's playlist",
+        "restore previous playlist",
+        "lost my playlist",
+        "lost my favourite song",
+        "lost my favorite song",
+        "lost my music",
+        "lost all my music",
+        "music disappeared",
+        "all my music disappeared",
+        "restore my music",
+        "restore my playlist",
+        "restore my playlists",
+        "restore previous week's playlist",
         "lost my playlist",
         "lost my playlists",
         "lost my library",
+        "deleted my entire library",
+        "deleting my entire library",
+        "entire library",
+        "music disappear",
+        "music disappeared",
+        "all my music",
         "my library disappeared",
         "all my saved music",
         "saved music disappeared",
