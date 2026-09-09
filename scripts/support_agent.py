@@ -4,7 +4,7 @@ import pandas as pd
 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
-
+from generate_reply import generate_reply
 
 # =========================================================
 # FILES
@@ -206,34 +206,6 @@ def decide_escalation(text, intent, retrieved_cases):
 
 
 # =========================================================
-# GROUNDED REPLY
-# =========================================================
-
-def generate_reply(intent, retrieved_cases):
-
-    if not retrieved_cases:
-        return (
-            "I’m sorry you’re experiencing this. "
-            "Could you share more details so we can look into it?"
-        )
-
-    best_reply = retrieved_cases[0]["spotify_reply"]
-
-    # Remove empty replies
-    if not best_reply.strip():
-        return (
-            "Thanks for reaching out. "
-            "Could you share a few more details about the issue?"
-        )
-
-    return (
-        "Based on similar Spotify support cases, "
-        "the recommended next step is:\n\n"
-        + best_reply
-    )
-
-
-# =========================================================
 # MAIN AGENT
 # =========================================================
 
@@ -292,8 +264,9 @@ def run_agent(text):
     if decision == "AUTO_HANDLE":
 
         reply = generate_reply(
-            intent,
-            retrieved_cases
+            customer_message=text,
+            intent=intent,
+            evidence=retrieved_cases[:3]
         )
 
         print("\nDraft Reply:")
