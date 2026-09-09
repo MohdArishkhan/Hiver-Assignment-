@@ -3,4 +3,5 @@
 !taxonomy_validation_sample.csv
 !annotated_taxonomy_validation.csv
 .env
+*.env
 __pycache__/
